@@ -1,4 +1,4 @@
-const Base_Url = "http://localhost:3000/";
+const Base_Url = "https://review-rate-backend.onrender.com/";
 
 export  const API  = {
     addcompany:Base_Url+"company",
