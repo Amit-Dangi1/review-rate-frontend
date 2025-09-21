@@ -116,10 +116,10 @@ const searchCompany = (e) => {
 
     <ul className="navbar-nav ms-auto">
       <li className="nav-item">
-        <Link className="nav-link" to="/signup">SignUp</Link>
+        <Link className="nav-link" to="/">SignUp</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/login">Login</Link>
+        <Link className="nav-link" to="/">Login</Link>
       </li>
     </ul>
   </div>
