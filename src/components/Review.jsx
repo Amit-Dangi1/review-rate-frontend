@@ -148,14 +148,7 @@ const Review = () => {
                             </div>
                             <div className="col">
                                 <h6 className="mb-0 fw-bold">{val.fullName}</h6>
-                                <small className="text-muted">{new Date(val.createdAt).toLocaleString('en-GB', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  })}</small>
+                                <small className="text-muted">{new Date(val.createdAt).toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',hour12: false })}</small>
                             </div>
                       
                         </div>
@@ -174,19 +167,8 @@ const Review = () => {
             </div>
         </div>
 )):(<div  className='mt-5'>No Review</div>)}
-    
-
-
-
-
-    </div> ,
-
-
-
-
-
-
-    {/* Dialog box */}
+    </div> 
+ 
 
 
 

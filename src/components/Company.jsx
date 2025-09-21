@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { API } from '../Api';
+import starimg from "../assets/starimg.png";
+
  
 
 
@@ -20,7 +22,7 @@ const Company = () => {
     e.preventDefault();
     try {
        let res = await axios.post(API.addcompany,company);
-              console.log(res.data);
+             
               
 
        toast.success(res.data.msg||"Company Added");
@@ -34,7 +36,7 @@ const Company = () => {
      
     } catch (error) {
       
-      console.log(error);
+ 
             toast.error(error?.response?.data?.msg || "Something went wrong!");
 
       
@@ -47,11 +49,11 @@ const Company = () => {
       let res = await axios.get(API.getcompany);
       setdata(res?.data?.comp)
       setOriginalData(res.data.comp)
-      console.log(res?.data?.comp);
+   
       
     } catch (error) {
                   toast.error(error.response?.data?.msg || "Something went wrong!");
-console.log(error);
+ 
 
     }
   }
@@ -90,17 +92,15 @@ const searchCompany = (e) => {
   return (
     <>
     <ToastContainer />
-
-      {/* Navbar */}
+ 
   <nav className="navbar navbar-expand-lg bg-white border-bottom sticky-top">
   <div className="container">
-    <Link className="navbar-brand d-flex align-items-center gap-2" to="#">
+    <Link className="navbar-brand d-flex align-items-center gap-2" to="#"><img src={starimg} style={{height:"40px"}} alt="" />
       <span>
-        Review<span className="text-primary">&</span><span className="f">RATE</span>
+        Review<span className="text-primary">&</span><span className="fw-semibold">RATE</span>
       </span>
     </Link>
-
-    {/* Centered search */}
+ 
  <div className="mx-auto w-50">
   <div className="input-group">
     <input onChange={(e)=>setsearchname(e.target.value)}
@@ -139,9 +139,7 @@ const searchCompany = (e) => {
             </div>
 
             <div className="col-lg-3 d-flex align-items-end">
-              {/* <button className="btn btn-primary w-50 mx-5">
-                 Add Company
-              </button> */}
+          
               <button type="button" className="btn btn-back-color text-white fw-semibold border mx-5" data-bs-toggle="modal" data-bs-target="#addCompanyModal">
                 Add Company
               </button>
@@ -162,7 +160,7 @@ const searchCompany = (e) => {
         </div>
 <p className='mt-5'></p>
   
-        {/* Company Card  */}
+      
         {data?.map((val,index)=>(
         <div key={index} className="card border-0 shadow-sm mb-3">
   
@@ -184,9 +182,9 @@ const searchCompany = (e) => {
                    {val.location}
                 </div>
                 <div className="d-flex align-items-center gap-2 mt-2">
-                  <span  className="fw-semibold">4.5</span>
+                  <span  className="fw-semibold"><i className='bi-star-fill 'style={{color:"gold"}}></i> 4.5</span>
                    
-                  <span className="text-muted small"> 0</span>
+                  <span className="text-muted small">Review 5</span>
               
                 </div>
               </div>
@@ -205,7 +203,7 @@ const searchCompany = (e) => {
       </div>
 
 
-      {/* PopUp */}
+    
       <div className="modal fade" id="addCompanyModal" tabIndex="-1" aria-labelledby="addCompanyModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
